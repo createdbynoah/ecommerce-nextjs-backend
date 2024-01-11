@@ -6,8 +6,8 @@ const product: SchemaTypeDefinition = {
   type: 'document',
   fields: [
     {
-      name: 'image',
-      title: 'Image',
+      name: 'images',
+      title: 'Images',
       type: 'array',
       of: [{type: 'image'}],
       options: {
@@ -33,6 +33,11 @@ const product: SchemaTypeDefinition = {
         source: 'name',
         maxLength: 90,
       },
+    },
+    {
+      name: 'published',
+      title: 'Published',
+      type: 'boolean',
     },
     {
       name: 'price',
