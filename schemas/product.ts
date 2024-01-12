@@ -40,15 +40,89 @@ const product: SchemaTypeDefinition = {
       type: 'boolean',
     },
     {
+      name: 'outOfStock',
+      title: 'Out of Stock',
+      type: 'boolean',
+      initialValue: false,
+    },
+    {
       name: 'price',
       title: 'Price',
       type: 'number',
+    },
+    {
+      name: 'salePrice',
+      title: 'Sale Price',
+      type: 'number',
+      placeholder: 'If this is set, the product will be on sale. Leave blank for no sale.',
     },
     {
       name: 'stock',
       title: 'Stock',
       type: 'number',
     },
+    {
+      name: 'condition',
+      title: 'Product Condition',
+      type: 'object',
+
+      fields: [
+        {
+          name: 'title',
+          title: 'Title',
+          type: 'string',
+          options: {
+            list: [
+              {title: 'Excellent', value: 'Excellent'},
+              {title: 'Like New', value: 'Like New'},
+              {title: 'Good', value: 'Good'},
+              {title: 'Fair', value: 'Fair'},
+              {title: 'Poor', value: 'Poor'},
+            ],
+            layout: 'radio',
+          },
+        },
+        {
+          name: 'class',
+          title: 'Class Name',
+          type: 'string',
+          options: {
+            list: [
+              {title: 'Excellent', value: 'excellent'},
+              {title: 'Like New', value: 'like-new'},
+              {title: 'Good', value: 'good'},
+              {title: 'Fair', value: 'fair'},
+              {title: 'Poor', value: 'poor'},
+            ],
+            layout: 'radio',
+          },
+        },
+
+        {
+          name: 'rating',
+          title: 'Rating',
+          type: 'string',
+          options: {
+            list: [
+              {title: '5 - Excellent', value: '5'},
+              {title: '4 - Like New', value: '4'},
+              {title: '3 - Good', value: '3'},
+              {title: '2 - Fair', value: '2'},
+              {title: '1 - Poor', value: '1'},
+            ],
+            layout: 'radio',
+          },
+        },
+        {
+          name: 'description',
+          title: 'Condition Description',
+          type: 'text',
+          placeholder:
+            'Please describe the condition of the product. This will be displayed on the product page next to the condition rating. Users can expand to see this description.',
+        },
+      ],
+    },
+
     {
       name: 'shortDescription',
       title: 'Short Description',
